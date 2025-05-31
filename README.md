@@ -6,3 +6,10 @@ I create this repository to practice all my skills and learn new skills,
 you are welcome to download it, collab, or review, thanks a lot and enjoy my repository
 
 
+# Steps to run proyect
+
+1. git clone "repo"
+
+2. npm install
+
+3. npm run dev
