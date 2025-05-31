@@ -16,5 +16,11 @@ export class Server {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(cors());
+
+    this.app.use(this.router);
+
+    this.app.listen(this.port, () => {
+      console.log(`Listening on http://localhost:3000`);
+    });
   }
 }
