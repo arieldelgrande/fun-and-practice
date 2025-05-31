@@ -5,12 +5,13 @@ import { CustomErrors } from "../../domain";
 export class UserMiddlewares {
   public static pagination(req: Request, resp: Response, next: NextFunction) {
     const body = req.body;
-    const pagination = CreateUserDto.pagination(body);
+    const pagination = new CreateUserDto(body);
 
     if (pagination instanceof CustomErrors) {
       resp.status(pagination.statusCode).send(pagination.message);
       return;
     }
+    console.log(pagination.offset, "paginations");
 
     req.body = {
       ...req.body,
