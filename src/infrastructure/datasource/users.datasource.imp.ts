@@ -3,8 +3,11 @@ import { PaginationProps } from "../../types";
 import { Users } from "../../types/user.types";
 
 export class UserDataSourceImp implements UserDataSource {
-  getUser(pagination: PaginationProps): Promise<Users> {
+  async getUser(pagination: PaginationProps): Promise<Users> {
     //Todo: here connect to data base
-    throw new Error("Method not implemented.");
+    console.log(pagination);
+
+    const test = await new Promise((res, rej) => res("ariel"));
+    return test as Users;
   }
 }
