@@ -1,6 +1,6 @@
 import { PaginationProps } from "../../types";
-import { UserEntity } from "../entity";
+import { Users } from "../../types/user.types";
 
 export abstract class UserDataSource {
-  abstract getUser(pagination: PaginationProps): Promise<UserEntity>;
+  abstract getUser(pagination: PaginationProps): Promise<Users>;
 }
