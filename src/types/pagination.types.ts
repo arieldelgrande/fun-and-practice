@@ -4,7 +4,7 @@ export interface PaginationProps {
   order: Order;
 }
 
-enum Order {
+export enum Order {
   ASC = "ASC",
   DESC = "DESC",
 }

@@ -15,7 +15,7 @@ export class UserController {
   }
 
   public getUser = (req: Request, resp: Response) => {
-    const pagination = req.body.pagination;
+    const pagination = req.body;
 
     new GetUsers(this.userRespository)
       .execute(pagination)

@@ -1,2 +1,2 @@
 export { ServerProps } from "./server.types";
-export { PaginationProps } from "./pagination.types";
+export { PaginationProps, Order } from "./pagination.types";
