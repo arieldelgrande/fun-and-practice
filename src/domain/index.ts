@@ -1,3 +1,5 @@
+export { CustomErrors } from "./errors/custom-errors.errors";
+
 export { GetUsers } from "./use-cases/users/getUsers.use-case";
 
 export { UserDataSource } from "./datasource/users.datasource";
