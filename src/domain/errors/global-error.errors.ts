@@ -1,4 +1,5 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from "express";
+import { CustomErrors } from "./custom-errors.errors";
 
 export class GlobalError {
   static globalErrorHandler = (
@@ -7,10 +8,12 @@ export class GlobalError {
     res: Response,
     next: NextFunction,
   ) => {
-    res.status(err?.statusCode || 500).json({
-      error: {
-        message: err?.message || "Internal Error Server",
-      },
-    });
+    console.log(err.message);
+
+    // res.status(err?.statusCode || 500).json({
+    //   error: {
+    //     message: err?.message || "Internal Error Server",
+    //   },
+    // });
   };
 }

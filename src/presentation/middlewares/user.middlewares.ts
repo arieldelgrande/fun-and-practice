@@ -6,7 +6,9 @@ export class UserMiddlewares {
   public static pagination(req: Request, resp: Response, next: NextFunction) {
     const body = req.body;
     try {
-      const pagination = new CreateUserDto(body);
+      const pagination = new CreateUserDto(body).props();
+
+      // console.log(pagination);
     } catch (error) {
       next(error);
     }

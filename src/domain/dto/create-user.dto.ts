@@ -1,41 +1,31 @@
 import { Order, PaginationProps } from "../../types";
-import { CustomErrors } from "../errors/custom-errors.errors";
 import { Number } from "../validations/type.validations";
 
 export class CreateUserDto {
   @Number()
-  public offset: number = 0;
+  public offset: number;
 
   @Number()
-  public limit: number = 10;
+  public limit: number;
 
-  private static order: string = Order.ASC;
+  order: string = Order.ASC;
 
   constructor({ offset, limit, order }: PaginationProps) {
     this.offset = offset;
+    this.limit = limit;
   }
-  //   public static pagination(data: any) {
-  //     data = {
-  //       offset: this.offset,
-  //       limit: this.limit,
-  //       order: this.order,
-  //       ...data,
-  //     };
 
-  //     if (typeof data.limit !== "number") {
-  //       return CustomErrors.BadRequest("limit must be a number");
-  //     }
-  //     if (typeof data.offset !== "number") {
-  //       throw new Error("offset must be a number");
-  //     }
-  //     if (!Object.values(Order).includes(data.order)) {
-  //       return CustomErrors.BadRequest("order must be ASC or DESC");
-  //     }
+  public props() {
+    const keys: string[] = (this as any).__number_props__ || [];
+    const result: Record<string, any> = {};
 
-  //     return {
-  //       order: data.order,
-  //       limit: data.limit,
-  //       offset: data.offset,
-  //     };
-  //   }
+    for (const key of keys) {
+      result[key] = (this as any)[key];
+    }
+    console.log(this, keys);
+    return {
+      offset: this.offset,
+      limit: this.limit,
+    };
+  }
 }
