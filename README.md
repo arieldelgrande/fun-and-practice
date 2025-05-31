@@ -8,7 +8,7 @@ you are welcome to download it, collab, or review, thanks a lot and enjoy my rep
 
 # Steps to run proyect
 
-1. git clone "repo"
+1. git clone https://github.com/arieldelgrande/fun-and-practice.git
 
 2. npm install
 
