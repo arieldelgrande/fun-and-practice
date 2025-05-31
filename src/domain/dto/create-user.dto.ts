@@ -4,9 +4,11 @@ import { Number } from "../validations/type.validations";
 
 export class CreateUserDto {
   @Number()
-  public offset: number = 10;
+  public offset: number = 0;
 
-  private static limit: number = 10;
+  @Number()
+  public limit: number = 10;
+
   private static order: string = Order.ASC;
 
   constructor({ offset, limit, order }: PaginationProps) {

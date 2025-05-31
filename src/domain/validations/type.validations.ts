@@ -10,10 +10,11 @@ export function Number() {
         return value;
       },
       set(newValue: number) {
-        if (value !== undefined) {
-          return value;
-        }
-
+        // console.log(value, propertyKey);
+        // if (value !== undefined && typeof value !== "number") {
+        //   return value;
+        // }
+        console.log(newValue, propertyKey);
         if (typeof newValue !== "number") {
           throw CustomErrors.BadRequest(
             `${propertyKey} must be of type number`,
