@@ -13,3 +13,7 @@ you are welcome to download it, collab, or review, thanks a lot and enjoy my rep
 2. npm install
 
 3. npm run dev
+
+# Design Patern
+
+DDD
